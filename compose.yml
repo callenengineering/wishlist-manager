@@ -1,0 +1,9 @@
+version: '1.0.0'
+services:
+  api:
+    build: .
+    container_name: "wishlist-organizer"
+    ports:
+      - "5000:15400"
+    volumes:
+      - ./src/:/src/
