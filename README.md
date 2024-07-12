@@ -1,4 +1,4 @@
-# Bookmark Manager
+# Wishlist Organizer
 
 ## Description
 
