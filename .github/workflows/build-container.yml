@@ -20,8 +20,8 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v5
-        with:
-          push: true
-          tags: callenengineering/wishlist-organizer:latest
+      - name: Check Docker Login
+        if: steps.docker_login.outcome == 'failure'
+        run: |
+          echo "Failed to log in to Docker Hub. Please check your credentials."
+          exit 1
